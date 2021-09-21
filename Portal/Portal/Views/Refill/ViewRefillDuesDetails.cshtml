@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Portal.Models.RefillOrder>
+
+@{ ViewData["Title"] = "ViewRefillDetails"; }
+
+
+<center><h2>Refill Due Details</h2></center>
+@if (Model != null)
+{
+<table class="table table-bordered table-dark" style="margin-top:25px;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Refill Order Id")
+            </th>
+            <th>
+                @Html.DisplayName("Subscription Id")
+            </th>
+            <th>
+                @Html.DisplayName("Drug Id")
+            </th>
+            <th>
+                @Html.DisplayName("refillDate")
+            </th>
+            <th>
+                @Html.DisplayName("NextRefill Date")
+            </th>
+            <th>
+                @Html.DisplayName("Status")
+            </th>
+            
+            <th>
+                @Html.DisplayName("Policy Id")
+            </th>
+            <th>
+                @Html.DisplayName("Member Id")
+            </th>
+            <th>
+                @Html.DisplayName("Location")
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var model1 in Model)
+        {
+            <tr>
+                <td>
+                    @model1.RefillOrderId
+                </td>
+                <td>
+                    @model1.Subscription_ID
+                </td>
+                <td>
+                    @model1.DrugID
+                </td>
+                <td>
+                    @model1.RefillDate
+                </td>
+                <td>
+                    @model1.NextRefillDate
+                </td>
+                <td>
+                    @model1.Status
+                </td>
+                
+                <td>
+                    @model1.Policy_ID
+                </td>
+                <td>
+                    @model1.Member_ID
+                </td>
+                <td>
+                    @model1.Location
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> }
+            else
+            {
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="color:red;text-align:center">No Refill Order Found.</h1>
+    </div>
+</div>
+                <h2></h2>}
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

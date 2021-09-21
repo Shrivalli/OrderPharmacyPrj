@@ -1,0 +1,96 @@
+﻿@model Portal.Models.RefillOrder
+
+@{ ViewData["Title"] = "ViewRefillDetails"; }
+
+
+@if (Model != null)
+{
+
+    <h1 style="text-align:center">Drug Refill Details</h1>
+<table class="table table-bordered table-dark" style="margin-top:20px;" >
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayName("Refill Order Id")
+            </th>
+            <th>
+                @Html.DisplayName("Subscription Id")
+            </th>
+            <th>
+                @Html.DisplayName("Drug Id")
+            </th>
+            <th>
+                @Html.DisplayName("refillDate")
+            </th>
+            <th>
+                @Html.DisplayName("NextRefill Date")
+            </th>
+            <th>
+                @Html.DisplayName("Status")
+            </th>
+            <th>
+                @Html.DisplayName("From date")
+            </th>
+            <th>
+                @Html.DisplayName("Policy Id")
+            </th>
+            <th>
+                @Html.DisplayName("Member Id")
+            </th>
+            <th>
+                @Html.DisplayName("Location")
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.RefillOrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Subscription_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.DrugID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.RefillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NextRefillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.FromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Policy_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Member_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Location)
+            </td>
+        </tr>
+    </tbody>
+</table> 
+}
+else
+{
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="color:red;text-align:center">No Refill Order Found.</h1>
+    </div>
+</div>
+<h2></h2>}
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

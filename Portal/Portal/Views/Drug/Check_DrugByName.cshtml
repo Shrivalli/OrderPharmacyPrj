@@ -1,0 +1,81 @@
+﻿@model Portal.Models.Drug
+
+@{ ViewData["Title"] = "Check_DrugByName";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<style>
+    h2 {
+        font-family: 'Times New Roman', Times, serif
+    }
+</style>
+<h2>Drug Details</h2>
+<hr />
+
+<div>
+    @if (Model != null)
+    {
+<hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Drug_Id)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Drug_Id
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Drug_Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Drug_Name
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Manufacturer)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Manufacturer
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Manufactured_Date)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Manufactured_Date
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Expiry_Date)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Expiry_Date
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Cost)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Cost
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.UnitsPackage)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.UnitsPackage
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.Quantity
+                    </dd>
+                </dl> }
+                            else
+                            {
+                                <div>
+                                    <div class="container">
+                                        <div class="jumbotron">
+                                            <h1 style="color:red;text-align:center">Drug not Found...</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+</div>
+<div>
+
+</div>

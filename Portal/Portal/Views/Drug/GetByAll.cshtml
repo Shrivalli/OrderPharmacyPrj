@@ -1,0 +1,58 @@
+﻿@model Portal.Models.DrugLocation
+
+@{ ViewData["Title"] = "GetByAll";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<style>
+    h2 {
+        font-family: 'Times New Roman', Times, serif
+    }
+</style>
+<h2>Drug Details</h2>
+<hr color="white"/>
+
+@if (Model != null)
+{
+<div>
+
+    <hr color="white" />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Drug_Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Drug_Id)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Drug_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Drug_Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Available_Stock)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Available_Stock)
+            
+        </dd>
+    </dl>
+</div> }
+else
+{
+<div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 style="color:red;text-align:center">No Drug Found at Location.</h1>
+        </div>
+    </div>
+</div>
+}

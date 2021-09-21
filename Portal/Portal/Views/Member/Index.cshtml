@@ -1,0 +1,81 @@
+﻿
+@model string
+@{ ViewData["Title"] = "Index"; }
+
+<style>
+    h1 {
+        font-family: 'Times New Roman', Times, serif
+    }
+</style>
+
+<h1 align="center">Welcome To Mail Order Pharmacy!</h1>
+
+<hr />
+
+<div class="container col-12" style="align-content:center;padding-right:30px;padding-left:120px;">
+
+    <div class="row" style="padding-right:10px; margin-bottom:10px;">
+        <div class="col">
+            <div class="card" style="width: 18rem; height:12rem;">
+                <img class="card-img-top" src="https://wallpaperaccess.com/full/1621424.jpg" alt="Card image cap" width="50" height="100">
+                <div class="card-body">
+                    <a href="/Drug/DrugDetailsall" class="col btn btn-success m-2">View Drug Availabilities</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;height:12rem;">
+                <img class="card-img-top" src="https://wallpaperaccess.com/full/4204887.jpg" alt="Card image cap" height="100">
+                <div class="card-body">
+                    <a href="/Refill/getIdforRefilldetails" class="col btn btn-primary m-2">Drug Refill Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;height:12rem;">
+                <img class="card-img-top" src="https://wallpaperbat.com/img/418737-medical-wallpaperdownload-free-cool-hd-background.jpg" alt="Card image cap" height="100">
+                <div class="card-body">
+                    <a href="/Subscription/subscriber" class="col btn btn-success m-2">Subscribe to Mail Order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 18rem;height:12rem;">
+                <img class="card-img-top" src="https://swall.teahub.io/photos/small/359-3595145_pharmacy-medicine-images-hd.jpg" alt="Card image cap" height="100">
+                <div class="card-body">
+                    <a href="/Subscription/unsubscriber" class="col btn btn-primary m-2">Unsubscribe to Mail Order</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; height:12rem;">
+                <img class="card-img-top" src="https://thumbs.dreamstime.com/b/customer-pharmacy-holding-medicine-bottle-woman-reading-label-text-medical-information-side-effects-drug-store-144083908.jpg" alt="Card image cap" height="100">
+                <div class="card-body">
+                    <a href="/Refill/ViewRefillDues" class="col btn btn-success m-2">Check Dues for Refill</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem; height:12rem;">
+                <img class="card-img-top" src="https://images.livemint.com/img/2020/04/23/1600x900/Para_1587664874862_1587664875068.jpg" alt="Card image cap" height="100">
+                <div class="card-body">
+                    <a href="/Refill/AdhokRefillOrder" class="col btn btn-primary m-2">Request Adhoc Refill Details</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row" style="padding-left:100px; padding-right:100px; margin:auto;">
+        <a href="/Drug/GetDrugId" class="col btn btn-primary m-2">View drug details by Name or ID</a>
+    </div>
+
+
+
+
+
+</div>

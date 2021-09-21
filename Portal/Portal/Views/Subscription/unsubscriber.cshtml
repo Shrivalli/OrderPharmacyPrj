@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Portal.Models.MemberSubscription
+@{ ViewData["Title"] = "unsubscriber"; }
+
+
+<div class="login-form">
+    <div class="row">
+        <div class="col-md-5">
+            <form asp-action="Unsubscribe" method="post">
+
+                <h2 class="text-center">Enter Details To Unsubscribe Mail Order Service</h2>
+                <br />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="MemberID" class="control-label"></label>
+
+                    <input asp-for="MemberID" type="number" name="mid" class="form-control" />
+                    <span asp-validation-for="MemberID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SubscriptionId" class="control-label"></label>
+
+                    <input asp-for="SubscriptionId" type="number" name="sid" class="form-control" />
+                    <span asp-validation-for="SubscriptionId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Unsubscribe" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+
+
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+                window.location.href = "@Url.Action("unsubscriber", "Subscription")";
+            };
+            </script>
+        }
+
+        @section Scripts {
+            <script>
+    $(document).keypress(function (event) {
+
+                    var keycode = (event.keyCode ? event.keyCode : event.which);
+                    if (keycode == '13') {
+                        //window.location.href = "/salaryLogViewmodel/SalaryList";
+                        window.location.href = "/Subscription/unsubscriber";
+                    }
+
+                });</script>
+        }
+

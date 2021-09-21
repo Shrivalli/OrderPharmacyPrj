@@ -1,0 +1,111 @@
+﻿@model Portal.Models.MemberPrescription
+
+@{ ViewData["Title"] = "subscriber"; }
+
+<style>
+    div form {
+        display: block;
+        margin-left: 400px;
+        margin-right: 400px;
+        width: 400px;
+    }
+</style>
+
+<div class="login-form">
+<div class="row">
+    <div class="col-md-5">
+    <form asp-action="Subscribe">
+
+        <h2 class="text-center">Prescription Details</h2>
+        <br />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="PrescriptionId" class="control-label"></label>
+
+            <input asp-for="PrescriptionId" class="form-control" />
+            <span asp-validation-for="PrescriptionId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MemberID" class="control-label"></label>
+
+            <input asp-for="MemberID" class="form-control" />
+            <span asp-validation-for="MemberID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Insurance_Policy_Number" class="control-label"></label>
+
+            <input asp-for="Insurance_Policy_Number" class="form-control" />
+            <span asp-validation-for="Insurance_Policy_Number" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="InsuranceProvider" class="control-label"></label>
+
+            <input asp-for="InsuranceProvider" class="form-control" />
+            <span asp-validation-for="InsuranceProvider" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PrescriptionDate" class="control-label"></label>
+
+            <input type="date" asp-for="PrescriptionDate" class="form-control" />
+            <span asp-validation-for="PrescriptionDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="drugID" class="control-label"></label>
+
+            <input asp-for="drugID" class="form-control" />
+            <span asp-validation-for="drugID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="dosage" class="control-label"></label>
+
+            <input asp-for="dosage" class="form-control" />
+            <span asp-validation-for="dosage" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PrescriptionCourse" class="control-label"></label>
+
+            <input asp-for="PrescriptionCourse" class="form-control" />
+            <span asp-validation-for="PrescriptionCourse" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Doctordetails" class="control-label"></label>
+
+            <input asp-for="Doctordetails" class="form-control" />
+            <span asp-validation-for="Doctordetails" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Subscribe" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.Message != null)
+{
+
+
+
+<script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+                window.location.href = "@Url.Action("subscriber", "Subscription")";
+            };
+</script>}
+
+@section Scripts {
+    <script>
+        $(document).keypress(function (event) {
+
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                //window.location.href = "/salaryLogViewmodel/SalaryList";
+                window.location.href = "/ubscription/subscriber";
+            }
+
+        });</script>
+}
+

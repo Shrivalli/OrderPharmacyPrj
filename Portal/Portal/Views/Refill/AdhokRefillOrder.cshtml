@@ -1,0 +1,49 @@
+﻿@model Portal.Models.RefillOrderLineItem
+@{ ViewData["Title"] = "AdhokRefillOrder"; }
+
+
+<div class="login-form">
+<div class="row">
+    <div class="col-md-5">
+    <form asp-action="adhokRefillDetails" method="post" style="color:white;">
+
+        <h2 class="text-center">Adhoc Refill Details</h2>
+        <br />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Policy_ID" class="control-label"></label>
+
+            <input asp-for="Policy_ID" type="number" name="policyId"  class="form-control" />
+            <span asp-validation-for="Policy_ID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Member_ID" class="control-label"></label>
+
+            <input asp-for="Member_ID"  type="number" name="Member_ID" class="form-control" />
+            <span asp-validation-for="Member_ID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Subscription_ID" class="control-label"></label>
+
+            <input asp-for="Subscription_ID" type="number" name="Subscription_ID" class="form-control" />
+            <span asp-validation-for="Subscription_ID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Location" class="control-label"></label>
+
+            <input asp-for="Location" type="text" name="Location" class="form-control" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Get Refiill Details" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

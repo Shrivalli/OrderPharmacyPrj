@@ -1,0 +1,47 @@
+﻿@model Portal.Models.DrugLocation
+
+@{ ViewData["Title"] = "DrugDetailsall"; }
+<style>
+    form {
+        display: block;
+        margin-left: 400px;
+        margin-right: 400px;
+        width: 350px;
+    }
+</style>
+
+<div class="login-form">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="GetByAll" method="get">
+
+                <h2 class="text-center">Check Drug Availability by Id and Location</h2>
+                <br />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Drug_Id" class="control-label"></label>
+
+                    <input asp-for="Drug_Id" type="number" name="id" class="form-control" />
+                    <span asp-validation-for="Drug_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Location_Name" class="control-label"></label>
+
+                    <input asp-for="Location_Name" type="text" name="loc" class="form-control" />
+                    <span asp-validation-for="Location_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Get Drug Details" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+        </div>
+
+      
+    </div> 
+    </div>
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
